@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:ignore="PxUsage,ContentDescription">
+
+
+    <com.hy.frame.widget.AutoFrameLayout
+        android:id="@+id/main_cTest"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:designScreenWidth="1280px">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/appName" />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@android:drawable/btn_star_big_on" />
+
+        <View
+            android:layout_width="1280px"
+            android:layout_height="60px"
+            android:background="@color/translucence" />
+
+        <com.hy.frame.widget.AutoRoundImage
+            android:layout_width="228px"
+            android:layout_height="228px"
+            android:layout_marginLeft="200px"
+            android:layout_marginTop="300px"
+            android:src="@color/black"
+            app:designBorder="6px"
+            app:designRadius="60px"
+            app:designBorderColor="@color/red"
+            app:designCircle="true" />
+    </com.hy.frame.widget.AutoFrameLayout>
+
+</LinearLayout>

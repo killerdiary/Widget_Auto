@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<!--    <item-->
+<!--            cls="com.hy.demo.ui.list.CmdActivity"-->
+<!--            android:title="@string/menu_list" />-->
+    <item
+            cls="com.hy.demo.ui.TestActivity"
+            android:title="@string/menu_test" />
+    <item
+            menu="menu_list"
+            android:title="@string/menu_list" />
+<!--    <item-->
+<!--            menu="menu_camera"-->
+<!--            android:title="@string/camera" />-->
+<!--    <item-->
+<!--            menu="menu_web"-->
+<!--            android:title="@string/web" />-->
+</menu>

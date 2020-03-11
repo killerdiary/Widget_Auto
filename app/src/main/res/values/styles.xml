@@ -1,0 +1,9 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="PxUsage">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Base_Theme">
+        <item name="designScreenWidth">1280px</item>
+    </style>
+
+
+</resources>

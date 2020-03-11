@@ -1,0 +1,7 @@
+<resources>
+    <string name="launch_str">启动页 v%s</string>
+    <string name="menu_test">加载</string>
+    <string name="menu_list">列表</string>
+    <string name="menu_list_list">ListView</string>
+    <string name="menu_list_grid">GridView</string>
+</resources>

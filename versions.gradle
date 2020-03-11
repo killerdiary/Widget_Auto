@@ -1,0 +1,125 @@
+def versions = [:]
+versions.minSdkVersion = 14
+versions.compileSdkVersion = 28
+versions.targetSdkVersion = 28
+versions.buildToolsVersion = "28.0.3"
+versions.javaVersion = 1.8
+
+versions.plugin_gradle = '3.2.0'
+versions.plugin_kotlin = "1.3.41"
+versions.plugin_github = "2.1"
+
+versions.androidx_multidex = "2.0.1"
+versions.androidx_recyclerview = "1.1.0-beta01"
+versions.androidx_constraintlayout = "2.0.0-alpha3"
+
+versions.frame_iframe = "2.0.0"
+versions.frame_iframe_adx = "1.0"
+versions.frame_mvp = "1.0.1"
+
+ext.VERSION = versions
+
+def deps = [:]
+
+def plugin = [:]
+plugin.gradle = "com.android.tools.build:gradle:${versions.plugin_gradle}"
+plugin.kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.plugin_kotlin}"
+plugin.github = "com.github.dcendents:android-maven-gradle-plugin:${versions.plugin_github}"
+deps.plugin = plugin
+
+def frame = [:]
+frame.iframe = "com.github.killerdiary:IFrame:${versions.frame_iframe}"
+frame.iframe_adx = "com.github.killerdiary:IFrame_Adx:${versions.frame_iframe_adx}"
+frame.mvp = "com.github.killerdiary:MVP:${versions.frame_mvp}"
+deps.frame = frame
+
+ext.deps = deps
+
+//ext.deps = [:]
+//def deps = [:]
+
+//def versions = [:]
+//versions.plugin_gradle = '3.5.0-beta05'
+//versions.plugin_github = "2.1"
+//versions.plugin_kotlin = "1.3.21"
+//
+//versions.androidx_appcompat = "1.1.0-alpha03"
+//versions.androidx_core = "1.1.0-alpha05"
+//versions.androidx_core_ktx = "1.1.0-alpha05"
+//versions.androidx_fragment = "1.1.0-alpha05"
+//versions.androidx_constraint = "2.0.0-alpha3"
+//versions.androidx_annotation = "1.1.0-alpha02"
+//versions.androidx_vectordrawable = "1.1.0-alpha01"
+//versions.androidx_vectordrawable_animated = "1.0.0"
+//versions.androidx_multidex = "2.0.1"
+//versions.androidx_lifecycle = "2.1.0-alpha02"
+//versions.androidx_recyclerview = "1.1.0-alpha02"
+//versions.androidx_viewpager2 = "1.0.0-alpha01"
+//versions.androidx_swiperefreshlayout = "1.0.0"
+//
+//versions.gson = "2.8.5"
+//versions.rxjava = "2.1.3"
+//versions.rxandroid = "2.0.1"
+//versions.retrofit = "2.3.0"
+//versions.okhttp_logging_interceptor = "3.9.0"
+//versions.net_okhttp3 = "3.11.0"
+//versions.glide = "4.9.0"
+//
+//deps.versions = versions
+//
+//def plugin = [:]
+//plugin.gradle = "com.android.tools.build:gradle:$versions.plugin_gradle"
+//plugin.kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.plugin_kotlin"
+//plugin.github = "com.github.dcendents:android-maven-gradle-plugin:$versions.plugin_github"
+//deps.plugin = plugin
+//
+//def androidx = [:]
+//androidx.appcompat = "androidx.appcompat:appcompat:$versions.androidx_appcompat"
+//androidx.core = "androidx.core:core:$versions.androidx_core"
+//androidx.core_ktx = "androidx.core:core-ktx:$versions.androidx_core_ktx"
+//androidx.fragment = "androidx.fragment:fragment:$versions.androidx_fragment"
+//androidx.constraint = "androidx.constraintlayout:constraintlayout:$versions.androidx_constraint"
+//androidx.annotation = "androidx.annotation:annotation:$versions.androidx_annotation"
+//androidx.vectordrawable = "androidx.vectordrawable:vectordrawable:$versions.androidx_vectordrawable"
+//androidx.vectordrawable_animated = "androidx.vectordrawable:vectordrawable-animated:$versions.androidx_vectordrawable"
+//androidx.legacy = "androidx.legacy:legacy-support-core-ui:$versions.androidx_legacy"
+//androidx.multidex = "androidx.multidex:multidex:$versions.androidx_multidex"
+//androidx.lifecycle_livedata = "androidx.lifecycle:lifecycle-livedata:$versions.androidx_lifecycle"
+//androidx.lifecycle_viewmodel = "androidx.lifecycle:lifecycle-viewmodel:$versions.androidx_lifecycle"
+//androidx.recyclerview = "androidx.recyclerview:recyclerview:$versions.androidx_recyclerview"
+//androidx.viewpager2 = "androidx.viewpager2:viewpager2:$versions.androidx_viewpager2"
+//androidx.swiperefreshlayout = "androidx.swiperefreshlayout:swiperefreshlayout:$versions.androidx_swiperefreshlayout"
+//deps.androidx = androidx
+//
+//def kotlin = [:]
+//kotlin.stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.plugin_kotlin"
+//deps.kotlin = kotlin
+//
+//def json = [:]
+//json.gson = "com.google.code.gson:gson:$versions.gson"
+//deps.json = json
+//
+//def retrofit = [:]
+//retrofit.runtime = "com.squareup.retrofit2:retrofit:$versions.retrofit"
+//retrofit.gson = "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+//retrofit.adapters = "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit"
+//retrofit.mock = "com.squareup.retrofit2:retrofit-mock:$versions.retrofit"
+//deps.retrofit = retrofit
+//
+//def okhttp = [:]
+//okhttp.runtime = "com.squareup.okhttp3:okhttp:$versions.net_okhttp3"
+//okhttp.logging = "com.squareup.okhttp3:logging-interceptor:$versions.net_okhttp3"
+//okhttp.mock = "com.squareup.okhttp3:mockwebserver:$versions.net_okhttp3"
+//deps.okhttp = okhttp
+//
+//def rxjava2 = [:]
+//rxjava2.rxjava = "io.reactivex.rxjava2:rxjava:$versions.rxjava"
+//rxjava2.rxandroid = "io.reactivex.rxjava2:rxandroid:$versions.rxandroid"
+//deps.rxjava2 = rxjava2
+//
+//def glide = [:]
+//glide.runtime = "com.github.bumptech.glide:glide:$versions.glide"
+//glide.compiler = "com.github.bumptech.glide:compiler:$versions.glide"
+//deps.glide = glide
+//
+//ext.deps = deps

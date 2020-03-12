@@ -43,7 +43,7 @@ public class AutoTextView extends TextView implements IAutoDesign {
     }
 
     public AutoTextView(Context context, AttributeSet attrs) {
-        this(context, attrs, 0);
+        this(context, attrs, android.R.attr.textViewStyle);
     }
 
     public AutoTextView(Context context, AttributeSet attrs, int defStyleAttr) {

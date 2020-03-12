@@ -43,7 +43,7 @@ public class AutoEditText extends EditText implements IAutoDesign {
     }
 
     public AutoEditText(Context context, AttributeSet attrs) {
-        this(context, attrs, 0);
+        this(context, attrs, android.R.attr.editTextStyle);
     }
 
     public AutoEditText(Context context, AttributeSet attrs, int defStyleAttr) {
@@ -117,6 +117,7 @@ public class AutoEditText extends EditText implements IAutoDesign {
         }
         super.onDraw(canvas);
     }
+
     @Override
     public int getDesignScreenWidth() {
         return this.designScreenWidth;

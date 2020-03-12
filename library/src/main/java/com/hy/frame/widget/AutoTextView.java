@@ -84,7 +84,8 @@ public class AutoTextView extends TextView implements IAutoDesign {
         setPadding(paddingLeft, paddingTop, paddingRight, paddingBottom);
         if (textSize > 0)
             setTextSize(TypedValue.COMPLEX_UNIT_PX, calDesignWidth(textSize));
-
+        if (drawPadding > 0)
+            setCompoundDrawablePadding(drawPadding);
         Drawable[] drawables = getCompoundDrawables();
         setCompoundDrawables(drawables[0], drawables[1], drawables[2], drawables[3]);
     }
@@ -112,7 +113,7 @@ public class AutoTextView extends TextView implements IAutoDesign {
             if (this.drawPadding > 0) drawablePadding = drawPadding;
             int drawableWidth = drawLeftWidth;
             float bodyWidth = textWidth + drawableWidth + drawablePadding;
-            canvas.translate((getMeasuredWidth() - bodyWidth) / 2, 0f);
+            canvas.translate((getMeasuredWidth() - bodyWidth) / 2 - getPaddingLeft(), 0f);
         }
         super.onDraw(canvas);
     }

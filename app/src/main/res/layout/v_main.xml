@@ -37,9 +37,27 @@
             android:layout_marginTop="300px"
             android:src="@color/black"
             app:designBorder="6px"
-            app:designRadius="60px"
             app:designBorderColor="@color/red"
-            app:designCircle="true" />
+            app:designCircle="true"
+            app:designRadius="60px" />
+
+        <com.hy.frame.widget.AutoTextView
+            style="@style/Base_BtnStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="160px"
+            android:layout_marginTop="600px"
+            android:layout_marginRight="160px"
+            android:gravity="center_vertical"
+         android:drawablePadding="100px"
+            app:designDrawLeftWidth="100px"
+            app:designDrawLeftHeight="100px"
+
+            android:drawableLeft="@android:drawable/ic_delete"
+            android:text="测试"
+            app:designTextSize="48px"
+            app:designDrawCenter="true"
+            android:background="@color/translucence" />
     </com.hy.frame.widget.AutoFrameLayout>
 
 </LinearLayout>

@@ -53,25 +53,25 @@ public class AutoEditText extends EditText implements IAutoDesign {
 
     @SuppressLint("CustomViewStyleable")
     private void initAttrs(Context context, AttributeSet attrs, int defStyleAttr) {
-        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.AutoTextView, defStyleAttr, 0);
-        this.designScreenWidth = a.getDimensionPixelSize(R.styleable.AutoTextView_designScreenWidth, AutoUtil.getDesignScreenWidth(context));
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.AutoEditText, defStyleAttr, 0);
+        this.designScreenWidth = a.getDimensionPixelSize(R.styleable.AutoEditText_designScreenWidth, AutoUtil.getDesignScreenWidth(context));
         this.designScale = calDesignScale();
-        int padding = a.getDimensionPixelSize(R.styleable.AutoTextView_designPadding, 0);
-        int paddingLeft = a.getDimensionPixelSize(R.styleable.AutoTextView_designPaddingLeft, padding);
-        int paddingTop = a.getDimensionPixelSize(R.styleable.AutoTextView_designPaddingTop, padding);
-        int paddingRight = a.getDimensionPixelSize(R.styleable.AutoTextView_designPaddingRight, padding);
-        int paddingBottom = a.getDimensionPixelSize(R.styleable.AutoTextView_designPaddingBottom, padding);
-        int textSize = a.getDimensionPixelSize(R.styleable.AutoTextView_designTextSize, 0);
-        this.drawLeftWidth = calDesignWidth(a.getDimensionPixelSize(R.styleable.AutoTextView_designDrawLeftWidth, 0));
-        this.drawLeftHeight = calDesignWidth(a.getDimensionPixelSize(R.styleable.AutoTextView_designDrawLeftHeight, this.drawLeftWidth));
-        this.drawTopWidth = calDesignWidth(a.getDimensionPixelSize(R.styleable.AutoTextView_designDrawTopWidth, 0));
-        this.drawTopHeight = calDesignWidth(a.getDimensionPixelSize(R.styleable.AutoTextView_designDrawTopHeight, this.drawTopWidth));
-        this.drawRightWidth = calDesignWidth(a.getDimensionPixelSize(R.styleable.AutoTextView_designDrawRightWidth, 0));
-        this.drawRightHeight = calDesignWidth(a.getDimensionPixelSize(R.styleable.AutoTextView_designDrawRightHeight, this.drawRightWidth));
-        this.drawBottomWidth = calDesignWidth(a.getDimensionPixelSize(R.styleable.AutoTextView_designDrawBottomWidth, 0));
-        this.drawBottomHeight = calDesignWidth(a.getDimensionPixelSize(R.styleable.AutoTextView_designDrawBottomHeight, this.drawBottomWidth));
-        this.drawPadding = calDesignWidth(a.getDimensionPixelSize(R.styleable.AutoTextView_designDrawPadding, 0));
-        this.drawCenter = a.getBoolean(R.styleable.AutoTextView_designDrawCenter, false);
+        int padding = a.getDimensionPixelSize(R.styleable.AutoEditText_designPadding, 0);
+        int paddingLeft = a.getDimensionPixelSize(R.styleable.AutoEditText_designPaddingLeft, padding);
+        int paddingTop = a.getDimensionPixelSize(R.styleable.AutoEditText_designPaddingTop, padding);
+        int paddingRight = a.getDimensionPixelSize(R.styleable.AutoEditText_designPaddingRight, padding);
+        int paddingBottom = a.getDimensionPixelSize(R.styleable.AutoEditText_designPaddingBottom, padding);
+        int textSize = a.getDimensionPixelSize(R.styleable.AutoEditText_designTextSize, 0);
+        this.drawLeftWidth = calDesignWidth(a.getDimensionPixelSize(R.styleable.AutoEditText_designDrawLeftWidth, 0));
+        this.drawLeftHeight = calDesignWidth(a.getDimensionPixelSize(R.styleable.AutoEditText_designDrawLeftHeight, this.drawLeftWidth));
+        this.drawTopWidth = calDesignWidth(a.getDimensionPixelSize(R.styleable.AutoEditText_designDrawTopWidth, 0));
+        this.drawTopHeight = calDesignWidth(a.getDimensionPixelSize(R.styleable.AutoEditText_designDrawTopHeight, this.drawTopWidth));
+        this.drawRightWidth = calDesignWidth(a.getDimensionPixelSize(R.styleable.AutoEditText_designDrawRightWidth, 0));
+        this.drawRightHeight = calDesignWidth(a.getDimensionPixelSize(R.styleable.AutoEditText_designDrawRightHeight, this.drawRightWidth));
+        this.drawBottomWidth = calDesignWidth(a.getDimensionPixelSize(R.styleable.AutoEditText_designDrawBottomWidth, 0));
+        this.drawBottomHeight = calDesignWidth(a.getDimensionPixelSize(R.styleable.AutoEditText_designDrawBottomHeight, this.drawBottomWidth));
+        this.drawPadding = calDesignWidth(a.getDimensionPixelSize(R.styleable.AutoEditText_designDrawPadding, 0));
+        this.drawCenter = a.getBoolean(R.styleable.AutoEditText_designDrawCenter, false);
         a.recycle();
         if (paddingLeft > 0) paddingLeft = calDesignWidth(paddingLeft);
         else paddingLeft = getPaddingLeft();
@@ -84,7 +84,8 @@ public class AutoEditText extends EditText implements IAutoDesign {
         setPadding(paddingLeft, paddingTop, paddingRight, paddingBottom);
         if (textSize > 0)
             setTextSize(TypedValue.COMPLEX_UNIT_PX, calDesignWidth(textSize));
-
+        if (drawPadding > 0)
+            setCompoundDrawablePadding(drawPadding);
         Drawable[] drawables = getCompoundDrawables();
         setCompoundDrawables(drawables[0], drawables[1], drawables[2], drawables[3]);
     }
@@ -112,11 +113,10 @@ public class AutoEditText extends EditText implements IAutoDesign {
             if (this.drawPadding > 0) drawablePadding = drawPadding;
             int drawableWidth = drawLeftWidth;
             float bodyWidth = textWidth + drawableWidth + drawablePadding;
-            canvas.translate((getMeasuredWidth() - bodyWidth) / 2, 0f);
+            canvas.translate((getMeasuredWidth() - bodyWidth) / 2 - getPaddingLeft(), 0f);
         }
         super.onDraw(canvas);
     }
-
     @Override
     public int getDesignScreenWidth() {
         return this.designScreenWidth;
